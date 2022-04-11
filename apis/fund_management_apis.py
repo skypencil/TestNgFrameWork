@@ -3,8 +3,8 @@ import requests
 api_version = 'v1' 
 base_url = "https://api.sandbox.gemini.com"
 
-def post_new_order(request_headers, data = None):
-    new_order_endpoint = f'/{api_version}/order/new'
-    url = base_url + new_order_endpoint
+def post_balances(request_headers, data = None):
+    balances_endpoint = f'/{api_version}/balances'
+    url = base_url + balances_endpoint
     response = requests.post(url, data, headers=request_headers)
     return response

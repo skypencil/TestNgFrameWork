@@ -1,18 +1,19 @@
-from urllib import response
 import payloads.order_placement_api_payloads as payload 
 import apis.order_placement_apis as order_api
 import apis.symbols_and_minimums_apis as symbols_api
-import unittest
+import pytest
 import logging
 
+def func():
+    return True
 
-class NewOrder(unittest.TestCase):
-    def test_smoke(self):
-        list_of_all_symbols_response = symbols_api.get_symbols().json()
-
-        for symbol in list_of_all_symbols_response:
-            response = symbols_api.get_symbols_details(symbol)
-            print(response.json()["status"])
+class NewOrderTests():
+    def test_smoke():
+        # list_of_all_symbols_response = symbols_api.get_symbols().json()
+        # for symbol in list_of_all_symbols_response:
+        #     response = symbols_api.get_symbols_details(symbol)
+        #     print(response.json()["status"])
+            assert func() == True
 
     # def test_smoke(self):
     #     new_order_payload = payload.generate_new_order_payload()
@@ -28,5 +29,3 @@ class NewOrder(unittest.TestCase):
     #     self.assertEqual(True, False)
 
 
-if __name__ == '__main__':
-    unittest.main()
